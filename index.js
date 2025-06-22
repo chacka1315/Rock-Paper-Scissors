@@ -22,37 +22,19 @@ let computerScore = 0;
 function playRound(hummanChoice, computerChoice) {
     hummanChoice = hummanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
-    if (hummanChoice==="rock" && computerChoice==="scissors") {
-        console.log ("You win! Rock beats Scissors")
+    if (hummanChoice===computerChoice) {
+        console.log ("Same choices! Equality!")
+    } else if ((hummanChoice==="rock" && computerChoice==="scissors") ||
+                (hummanChoice==="paper" && computerChoice==="rock") ||
+                (hummanChoice==="scissors" && computerChoice==="paper"))
+    {
+        console.log(`You win! ${hummanChoice} beats ${computerChoice}`) 
         hummanScore++
-    } else if (hummanChoice==="rock" && computerChoice==="paper") {
-        console.log ("You lose! Rock can't beats Paper")
-        computerScore++        
-    } else if (hummanChoice==="rock" && computerChoice==="rock") {
-        console.log ("Same choices! Equality")   
-
-
-    } else if (hummanChoice==="paper" && computerChoice==="scissors") {
-        console.log ("You lose! Scissors beats Paper")
+    } else {
+        console.log (`You lose! ${hummanChoice} can't beats ${computerChoice}`)
         computerScore++
-    } else if (hummanChoice==="paper" && computerChoice==="rock") {
-        console.log ("You win! Paper beats Rock")
-        hummanScore++        
-    } else if (hummanChoice==="paper" && computerChoice==="paper") {
-        console.log ("Same choices! Equality")
-
-
-    } else if (hummanChoice==="scissors" && computerChoice==="Rock") {
-        console.log ("You lose! Rock beats Scissors")
-        computerScore++
-    } else if (hummanChoice==="scissors" && computerChoice==="paper") {
-        console.log ("You win! Scissors beats Paper")
-        hummanScore++        
-    } else if (hummanChoice==="paper" && computerChoice==="paper") {
-        console.log ("Same choices! Equality")  
     }
 }
-
 
 //function that loops the round 5 times
 function PlayGame() {
@@ -61,7 +43,6 @@ function PlayGame() {
         hummanSelect = getHummatChoice();
         computerSelect = getComputerChoice();
         playRound(hummanSelect, computerSelect);
-        console.log(`It was your ${hummanSelect} VS The computer's ${computerSelect}`);
         round++;
     }
     console.log(`Your score = ${hummanScore} and Computer score = ${computerScore}`);
@@ -72,7 +53,6 @@ function PlayGame() {
     }  else{
         console.log("Woaw, EQUALITY ON THIS GAME !")
     }
-
 }
 
 //Game starter
