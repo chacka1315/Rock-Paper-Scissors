@@ -1,3 +1,4 @@
+// function that return computer choice
 function getComputerChoice() {
     const choice = {
         choice1 : "Rock",
@@ -8,4 +9,8 @@ function getComputerChoice() {
     return(choice[computerChoice])   
 }
 
-
+// function that return the player choice
+function getHummatChoice() {
+    let HummanChoice = prompt("Input your choice (Rock, Paper or Scissors?")
+    return (HummanChoice)    
+}
