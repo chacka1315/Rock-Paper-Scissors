@@ -39,11 +39,13 @@ function playRound(hummanChoice, computerChoice) {
 //function that loops the round 5 times
 function PlayGame() {
     let round = 1;
+    console.log (`ROUND${round} !`)
     while (round < 6) {
         hummanSelect = getHummatChoice();
         computerSelect = getComputerChoice();
         playRound(hummanSelect, computerSelect);
         round++;
+        console.log (`ROUND${round} !`)
     }
     console.log(`Your score = ${hummanScore} and Computer score = ${computerScore}`);
     if (hummanScore > computerScore) {
