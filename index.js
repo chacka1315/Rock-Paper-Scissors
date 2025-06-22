@@ -18,7 +18,7 @@ function getHummatChoice() {
 let hummanScore = 0;
 let computerScore = 0;
 
-//fonction for playimg
+//fonction for playimg the different round
 function playRound(hummanChoice, computerChoice) {
     hummanChoice = hummanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
@@ -52,7 +52,22 @@ function playRound(hummanChoice, computerChoice) {
         console.log ("Same choices! Equality")  
     }
 }
-hummanSelect = getHummatChoice();
-computerSelect = getComputerChoice();
-playRound(hummanSelect, computerSelect);
-console.log(`It was your ${hummanSelect} VS The computer's ${computerSelect}`)
+
+
+//function that loops the round 5 times
+function PlayGame() {
+    let round = 1
+    console.log(`ROUND${round} !`)
+    while (round < 6) {
+        hummanSelect = getHummatChoice();
+        computerSelect = getComputerChoice();
+        playRound(hummanSelect, computerSelect);
+        console.log(`It was your ${hummanSelect} VS The computer's ${computerSelect}`)
+        round++
+    }           
+}
+
+//Game starter
+PlayGame()
+
+
