@@ -56,15 +56,23 @@ function playRound(hummanChoice, computerChoice) {
 
 //function that loops the round 5 times
 function PlayGame() {
-    let round = 1
-    console.log(`ROUND${round} !`)
+    let round = 1;
     while (round < 6) {
         hummanSelect = getHummatChoice();
         computerSelect = getComputerChoice();
         playRound(hummanSelect, computerSelect);
-        console.log(`It was your ${hummanSelect} VS The computer's ${computerSelect}`)
-        round++
-    }           
+        console.log(`It was your ${hummanSelect} VS The computer's ${computerSelect}`);
+        round++;
+    }
+    console.log(`Your score = ${hummanScore} and Computer score = ${computerScore}`);
+    if (hummanScore > computerScore) {
+        console.log("YOU WIN THE GAME !")   
+    } else if (hummanScore < computerScore)  {
+        console.log("YOU LOSE THE GAME !")
+    }  else{
+        console.log("Woaw, EQUALITY ON THIS GAME !")
+    }
+
 }
 
 //Game starter
